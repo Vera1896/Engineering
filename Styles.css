@@ -11,6 +11,11 @@
 .about_me:hover {
   background-color: white;
 }
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
 .about_me {
   font-size: 25px;
   transition: all 0.5s;

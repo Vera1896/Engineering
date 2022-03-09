@@ -1,5 +1,6 @@
+cd Desktop/Website/
 git add .
 git status 
 git commit -m "First commit" 
-git log 
+git log (Press Q)
 git push -u origin main
