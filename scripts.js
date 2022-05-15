@@ -1,14 +1,8 @@
-var name = "Vera";
-console.log(name);
-name = "Jammie"
-console.log(name)
-var number = 5
-console.log(number+6);
-/*
-console.log(5);
-console.log('He' + 'llo'); 
-console.log('Testing');
-console.log(123);
-console.log('   Hello '.length);
-console.log('1' + '' + '2');
-*/ 
+$('.scroll').scroll(function() {
+    console.log('hi')
+      var x = $(this).scrollTop();
+      $('.image1').css('background-position', '0% ' + parseInt(-x / 3) + 'px');
+        $('.image2').css('background-position', '0% ' + parseInt(-x / 3) + 'px');
+        $('.image3').css('background-position', '0% ' + parseInt(-x / 3) + 'px');
+  });
+  console.log('test')

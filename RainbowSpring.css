@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: hsl(192deg, 89%, 83%);
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 100vmin;
+    aspect-ratio: 3/2;
+}
+
+.cloud-container {
+    position: absolute;
+    bottom: 17.5vmin;
+    aspect-ratio: 2;
+    width: 30vmin;
+    }
+
+    .cloud {
+        position: absolute;
+        width: 30vmin;
+        aspect-ratio: 2;
+        background: whitesmoke;
+        border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%;
+        filter: blur(0.5vmin);
+    }
+
+    .eyes{
+        position: absolute;
+        width: 10vmin;
+        height: 4vmin;
+        top: 35%;
+        left: 40%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+.cloud:before,
+.cloud:after {
+    content: "";
+    position: absolute;
+    background: inherit;
+    border-radius: inherit;
+    bottom: 0;
+}
+.eyes:before, .eyes:after{
+    content: '';
+    height: 3vmin;
+    width: 2.5vmin;
+    background: #222;
+    border-radius: 100%;
+}
+.cloud:before {
+    height: 65%;
+    width: 50%;
+    left: -17.5%;
+}
+.cloud:after {
+    height: 45%;
+    width: 40%;
+    right: -17.5%;
+}
+.cloud-container:nth-child(3) {
+    left: 5vmin;
+}
+.cloud-container:nth-child(4) {
+    right: 5vmin;
+    transform: rotateY(180deg);
+}
+.cloud-container .mouth {
+    position: absolute;
+    top: 60%;
+    left: 51.5%;
+    height: 2vmin;
+    width: 4vmin;
+    border: .5vmin solid #222;
+    border-radius: 0 0 10vmin 10vmin;
+    background: black; 
+}
+
+.rainbow-container {
+    position: absolute;
+    width: 85vmin;
+    aspect-ratio: 2;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+.rainbow {
+    position: absolute;
+    border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%;
+    width: 85vmin;
+    aspect-ratio: 2;
+    transform: rotate(0deg);
+    transform-origin: bottom;
+    filter: blur(0.05vmin);
+    opacity: 1;
+    background: radial-gradient(
+        circle at 50% 100%,
+        transparent 25%,
+        hsl(270deg, 100%, 70%) 30%,
+        hsl(240deg, 100%, 70%) 35%,
+        hsl(210deg, 100%, 70%) 40%,
+        hsl(120deg, 100%, 70%) 45%,
+        hsl(30deg, 100%, 70%) 50%,
+        hsl(30deg, 100%, 70%) 55%,
+        hsl(0deg, 100%, 70%) 60%,
+        transparent 65%
+    );
+
+    animation: rainbow 10s ease-in-out infinite;
+
+}
+.rainbow-container:after,
+.rainbow-cotainer:before {
+    content: "";
+    position: absolute;
+    bottom: -4.75vmin;
+    height: 20vmin;
+    width: 35vmin;
+    background: radial-gradient(circle at 50% 0%, transparent 45%, hsl(192deg, 89%, 83%) 55%);
+}
+.rainbow-container:before {
+    left: -2.5vmin;
+    transform: rotate(25deg);
+}
+.rainbow-container:after {
+    content: "";
+    right: -2.5vmin;
+    transform: rotate(-25deg);
+}
+.rainbow:after,
+.rainbow:before {
+    content: "";
+    position: absolute;
+    bottom: -4.75vmin;
+    height: 20vmin;
+    width: 35vmin;
+    background: radial-gradient(circle at 50% 0%, transparent 45%, hsl(192deg, 89%, 83%) 55%);
+}
+.rainbow:before {
+    left: -2.5vmin;
+    transform: rotate(25deg);
+}
+.rainbow:after {
+    content: "";
+    right: -2.5vmin;
+    transform: rotate(-25deg);
+}
+
+    
+
+    .letter {
+        position: absolute;
+        width: 5vmin;
+        height: 5vmin;
+        opacity: 0;
+        top: 15vmin;
+        left: 45vmin;
+        font-family: "Permanent Marker", cursive;
+        font-size: 7.5vmin;
+        Text-shadow: 1px 1px 0 white, 
+        1px -1px 0 white, 
+        -1px 1px 0 white, 
+        -1px -1px 0 white, 
+        1px 0px 0 white, 
+        0px 1px 0 white, 
+        -1px 0px 0 white, 
+        0px -1px 0 white;
+        transform-origin: 2.5vmin 35vmin;
+        animation: 10s letters 1s ease-in-out infinite;
+}
+.letter:nth-child(1) {
+    color: hsl(270deg, 100%, 70%);
+    transform: rotate(-47.5deg);
+}
+.letter:nth-child(2) {
+    color: hsl(240deg, 100%, 70%);
+    transform: rotate(-30deg);
+}
+.letter:nth-child(3) {
+    color: hsl(210deg, 100%, 70%);
+    transform: rotate(-12.5deg);
+}
+.letter:nth-child(4) {
+    color: hsl(120deg, 100%, 70%);
+    transform: rotate(5deg);
+}
+.letter:nth-child(5) {
+    color: hsl(30deg, 100%, 70%);
+    transform: rotate(22.5deg);
+}
+.letter:nth-child(6) {
+    color: hsl(30deg, 100%, 70%);
+    transform: rotate(40deg);
+}
+.letter:nth-child(7) {
+    color: hsl(0deg, 100%, 70%);
+    transform: rotate(57.5deg);
+}
+@keyframes rainbow {
+    0%,
+    13%,
+    87%,
+    100% {
+        transform: rotate(-180deg);
+    }
+    25%,
+    32%,
+    68%,
+    75% {
+        transform: rotate(0deg);
+    }
+    45%,
+    55% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes letters {
+    0%,
+    24%,
+    61%,
+    100% {
+        opacity: 0;
+    }
+    25%,
+    60% {
+        opacity: 1;
+    }
+}
+
+.signature {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.link {
+	position: absolute;
+	z-index: 10;
+	left: calc(5vmin - 1rem);
+	bottom: calc(5vmin - 1rem);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.link.my-name {
+    position: relative;
+}
+.link span {
+    font-size: 2rem;
+    font-family: arial, sans-serif;
+    color: whitesmoke;
+}
+.link.before,
+.after {
+    overflow: hidden;
+    width: 0px;
+    transition: width 0.5s;
+    transform-origin: right;
+}
+.link.before-text {
+    display: inline-block;
+    width: auto;
+    text-align: right;
+}
+.link.after-text {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 3rem;
+    transform-origin: top center;
+}
+.link:hover .before {
+    width: 3.5rem;
+}
+.link:hover .after {
+    width: 5rem;
+}
+.link:hover .spin {
+    display: inline-block;
+    transition: 0.5s transform 0.5s ease-in-out;
+    transform: rotate(360deg);
+}

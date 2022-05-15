@@ -1,0 +1,27 @@
+.frame {
+    width: 200px;
+    height: 200px;
+    border: 1px solid transparent;
+    background: url(flyingbird.png) no-repeat top left;
+      background-size: 600px 600px;
+      animation: frame-animation 2s steps(1) infinite;
+      overflow: hidden;
+  }
+  .animation {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+  }
+  
+  @keyframes frame-animation { 
+    0% { background-position: 0px 0; } 
+    12.5% {background-position: -200px 0;}
+    25%  { background-position: -400px 0; }
+    37.5%  { background-position: 0 -200px; }
+    50%  { background-position: -200px -200px; }
+    62.5%  { background-position: -400px -200px; }
+    75%  { background-position: 0 -400px; }
+    87.5%  { background-position: -200px -400px; }
+    100%  { background-position: -400px -400px; }
+  }
+  /* The first coordinate is the column and the second coordinate is the row.*/ 
